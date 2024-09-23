@@ -61,6 +61,20 @@ class Homepage extends StatelessWidget {
           ),
         ],
       ),
+      body: const SafeArea(
+          child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text("Hello World.."),
+            Text("Hello World.."),
+            Text("Hello World.."),
+            Text("Hello World.."),
+            Text("Hello World.."),
+            Text("Hello World.."),
+          ],
+        ),
+      )),
     );
   }
 }
