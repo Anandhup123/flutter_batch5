@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_batch5/page9.dart';
 
 class Screen9 extends StatefulWidget {
   const Screen9({super.key});
@@ -13,7 +14,19 @@ class _Screen9State extends State<Screen9> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Screen10(),
+                  ),
+                );
+              },
+              icon: Icon(Icons.arrow_forward)),
+        ],
+      ),
       body: SafeArea(
         child: Center(
           child: Column(
