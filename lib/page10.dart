@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_batch5/page11.dart';
 
 class Screen11 extends StatefulWidget {
   const Screen11({super.key});
@@ -32,6 +33,18 @@ class _Screen11State extends State<Screen11> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => Screen12(),
+                ),
+              );
+            },
+            icon: Icon(Icons.arrow_forward),
+          ),
+        ],
         backgroundColor: Colors.green,
       ),
       body: SafeArea(
