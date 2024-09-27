@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_batch5/page10.dart';
 
 class Screen10 extends StatefulWidget {
   const Screen10({super.key});
@@ -18,6 +19,18 @@ class _Screen10State extends State<Screen10> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => Screen11(),
+                ),
+              );
+            },
+            icon: Icon(Icons.arrow_forward),
+          ),
+        ],
         backgroundColor: const Color.fromARGB(255, 255, 119, 0),
       ),
       body: SafeArea(
