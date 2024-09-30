@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_batch5/page4.dart';
 
+// ignore: must_be_immutable
 class Screen4 extends StatelessWidget {
   Screen4({super.key});
   List<String> _names = ["Akhil", "Aswin", "Jobin", "Suresh", "Venu"];
@@ -42,6 +43,7 @@ class Screen4 extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class BuilderElements extends StatelessWidget {
   String name = "";
   BuilderElements({required this.name});

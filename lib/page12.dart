@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_batch5/page14.dart';
 
 class SignUpForm extends StatefulWidget {
   @override
@@ -111,6 +112,18 @@ class _SignUpFormState extends State<SignUpForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => Screen15(),
+                ),
+              );
+            },
+            icon: Icon(Icons.arrow_forward),
+          ),
+        ],
         centerTitle: true,
         title: Text('Sign Up'),
         backgroundColor: Colors.blue,
