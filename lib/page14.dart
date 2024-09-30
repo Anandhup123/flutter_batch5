@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_batch5/page15.dart';
 
 class Screen15 extends StatefulWidget {
   const Screen15({super.key});
@@ -15,6 +16,18 @@ class _Screen15State extends State<Screen15> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => Screen17(),
+                ),
+              );
+            },
+            icon: Icon(Icons.arrow_forward),
+          ),
+        ],
         backgroundColor: Colors.deepOrange,
       ),
       body: SafeArea(
