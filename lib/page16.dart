@@ -111,21 +111,85 @@ class Screen19 extends StatelessWidget {
       ),
       body: SafeArea(
         child: ListView.separated(
-            itemBuilder: (context, index) => ListTile(
-                  title: Text(laptopData[index]['title']),
-                  subtitle: Text(laptopData[index]['subtitle']),
-                  trailing: Text(laptopData[index]['trailing']),
-                  leading: CircleAvatar(
-                      radius: 40,
-                      backgroundImage:
-                          NetworkImage(laptopData[index]['leading'])),
+          itemBuilder: (context, index) => InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ViewScreen(
+                    title: laptopData[index]['title'],
+                    subtitle: laptopData[index]['subtitle'],
+                    leading: laptopData[index]['leading'],
+                    trailing: laptopData[index]['trailing'],
+                  ),
                 ),
-            separatorBuilder: (context, index) => Divider(
-                  color: Colors.black,
-                  thickness: 2,
-                ),
-            itemCount: laptopData.length),
+              );
+            },
+            child: ListTile(
+              title: Text(laptopData[index]['title']),
+              subtitle: Text(laptopData[index]['subtitle']),
+              trailing: Text(laptopData[index]['trailing']),
+              leading: CircleAvatar(
+                radius: 40,
+                backgroundImage: NetworkImage(laptopData[index]['leading']),
+              ),
+            ),
+          ),
+          separatorBuilder: (context, index) => Divider(
+            color: Colors.black,
+            thickness: 2,
+          ),
+          itemCount: laptopData.length,
+        ),
       ),
+    );
+  }
+}
+
+class ViewScreen extends StatelessWidget {
+  String title, subtitle, leading, trailing;
+  ViewScreen(
+      {required this.title,
+      required this.subtitle,
+      required this.leading,
+      required this.trailing});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: SafeArea(
+          child: Center(
+        child: Column(
+          children: [
+            Image(
+              width: 300,
+              height: 300,
+              image: NetworkImage(leading),
+            ),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 35,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            Text(
+              trailing,
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.w300,
+              ),
+            ),
+            Text(
+              subtitle,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w300,
+              ),
+            )
+          ],
+        ),
+      )),
     );
   }
 }
