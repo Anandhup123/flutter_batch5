@@ -230,7 +230,30 @@ class _DropDownState extends State<DropDown> {
               },
               child: Text("Submit"),
             ),
-            Text(selectedItem)
+            TextButton(
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                          title: Icon(
+                            size: 50,
+                            color: Colors.red,
+                            Icons.warning,
+                          ),
+                          content:
+                              Text("Error Generated , Do you want to continue"),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: Text("Cancel"),
+                            )
+                          ],
+                        ));
+              },
+              child: Text("Show Alert"),
+            )
           ],
         ),
       )),
