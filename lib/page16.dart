@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_batch5/page13.dart';
 
 class Screen19 extends StatelessWidget {
   List<Map<String, dynamic>> laptopData = [
@@ -107,6 +108,18 @@ class Screen19 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => page9(),
+                ),
+              );
+            },
+            icon: Icon(Icons.arrow_forward),
+          ),
+        ],
         backgroundColor: Colors.green,
       ),
       body: SafeArea(
