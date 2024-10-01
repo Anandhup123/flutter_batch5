@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_batch5/SharedPreference.dart';
 import 'package:flutter_batch5/page2.dart';
 import 'package:flutter_batch5/page3.dart';
+import 'package:flutter_batch5/spalsh.dart';
 
 main() {
   runApp(Myapp());
@@ -23,7 +24,7 @@ class Myapp extends StatelessWidget {
           seedColor: Colors.blue,
         ),
       ),
-      home: homepage(),
+      home: Splash(),
     );
   }
 }
