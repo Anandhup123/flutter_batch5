@@ -95,9 +95,10 @@ class _Screen11State extends State<Screen11> {
                   int rem = 0;
                   Solution = "";
                   int arm = 0;
+                  int power_length = number.toString().length.toInt();
                   while (number != 0) {
                     rem = number % 10;
-                    arm = arm + (rem * rem * rem);
+                    arm = arm + (pow(rem, power_length).toInt());
                     number = number ~/ 10;
                   }
                   setState(() {
