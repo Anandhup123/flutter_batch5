@@ -10,7 +10,7 @@ class Screen7 extends StatefulWidget {
 
 class _Screen7State extends State<Screen7> {
   int number = 0;
-
+  int lastValue = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,6 +50,7 @@ class _Screen7State extends State<Screen7> {
                     onPressed: () {
                       setState(() {
                         number++;
+                        lastValue = number;
                       });
                     },
                     child: Text("count Up"),
@@ -58,6 +59,7 @@ class _Screen7State extends State<Screen7> {
                     onPressed: () {
                       setState(() {
                         number--;
+                        lastValue = number;
                       });
                     },
                     child: Text("count down"),
@@ -69,6 +71,14 @@ class _Screen7State extends State<Screen7> {
                       });
                     },
                     child: Text("Reset"),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        number = lastValue;
+                      });
+                    },
+                    child: Text("Preview"),
                   ),
                 ],
               ),
